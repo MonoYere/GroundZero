@@ -1,2 +1,0 @@
-# GroundZero
-Prueba Programación Web

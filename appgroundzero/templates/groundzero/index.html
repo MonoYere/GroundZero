@@ -1,0 +1,168 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio</title>
+    <link rel="shortcut icon" href="{% static 'media/logo.png' %}" type="image/x-icon">
+    <link rel="stylesheet" href="{% static 'css\styles.css' %}">
+
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700,800&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <header class="headerportada">
+        <nav>
+            <a href="{% url 'home' %}">Inicio</a>
+            <a href="{% url 'acerca-de' %}">Acerca de</a>
+            <a href="{% url 'productos' %}">Productos</a>
+            <a href="{% url 'artistas' %}">Artistas</a>
+            <a href="#">Contacto</a>
+        </nav>
+        <section class="textos-header">
+            <h1>Rompe el molde, sé la vanguardia.</h1>
+        </section>
+        <div class="wave" style="height: 150px; overflow: hidden;" ><svg viewBox="0 0 500 150" preserveAspectRatio="none" style="height: 100%; width: 100%;"><path d="M0.00,49.98 C149.99,150.00 349.20,-49.98 500.00,49.98 L500.00,150.00 L0.00,150.00 Z" style="stroke: none; fill: rgb(255, 255, 255);"></path></svg></div>
+    </header>
+    
+    <main>
+        <section class="contenedor sobre-nosotros">
+            <h2 class="titulo">Nuestra perspectiva</h2>
+            <div class="contenedor-sobre-nosotros">
+             <img class= "imagen-about-us"src="{% static 'media/boutus.jpg' %}" alt="Sobre Nosotros" width="630" hegith="454" >
+                <div class="contenido-textos">
+                    <h3><span>1</span>Misión</h3>
+                    <p>Ground Zero entrega a tu disposición sus servicios
+                        relacionados a la venta de productos artísticos, apuntando
+                        al mercado del arte innovador y rupturista. Nuestra misión es
+                        ser el enlace entre las creatividades visionarias y la demanda de arte
+                        exigente y conocedora.
+                    </p>
+                    <h3><span>2</span>Visión</h3>
+                    <p>Preevemos ser a futuro el lider en el mercado artístico actual
+                        entregando un producto de exclusividad y dandole a los artistas emergentes
+                        una oportunidad para exhibir su arte.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section class="portafolio">
+            <div class="contenedor">
+                <h2 class="titulo">Productos</h2>
+                <div class="galeria-port">
+                    <div class="imagen-port">
+                        <img src="{% static 'media/escultura1.png' %}" alt="StormTrooper" width="256" height="256">
+                        <div class="hover-galeria">
+                            <img src="{% static 'media/logoselector.png' %}" alt="" width="100" height="100">
+                            <p>Nuestro trabajo</p>
+                        </div>
+                    </div>
+                    <div class="imagen-port">
+                        <img src="{% static 'media/escultura2.jpg' %}" alt="Superman" width="256" height="256">
+                        <div class="hover-galeria">
+                            <img src="{% static 'media/logoselector.png' %}" alt="" width="100" height="100">
+                            <p>Nuestro trabajo</p>
+                        </div>
+                    </div>
+                    <div class="imagen-port">
+                        <img src="{% static 'media/orfebreria1.jpg' %}" alt="Trarilonko" width="256" height="256">
+                        <div class="hover-galeria">
+                            <img src="{% static 'media/logoselector.png' %}" alt="" width="100" height="100">
+                            <p>Nuestro trabajo</p>
+                        </div>
+                    </div>
+                    <div class="imagen-port">
+                        <img src="{% static 'media/orfebreria2.png' %}" alt="Sukill" width="256" height="256">
+                        <div class="hover-galeria">
+                            <img src="{% static 'media/logoselector.png' %}" alt="" width="100" height="100">
+                            <p>Nuestro trabajo</p>
+                        </div>
+                    </div>
+                    <div class="imagen-port">
+                        <img src="{% static 'media/pintura1.jpg' %}" alt="Casa" width="256" height="256">
+                        <div class="hover-galeria">
+                            <img src="{% static 'media/logoselector.png' %}" alt="" width="100" height="100">
+                            <p>Nuestro trabajo</p>
+                        </div>
+                    </div>
+                    <div class="imagen-port">
+                        <img src="{% static 'media/pintura2.jpg' %}" alt="Calle" width="256" height="256">
+                        <div class="hover-galeria">
+                            <img src="{% static 'media/logoselector.png' %}" alt="" width="100" height="100">
+                            <p>Nuestro trabajo</p>
+                        </div>
+                    </div>
+                    <div class="imagen-port">
+                        <img src="{% static 'media/pintura3.jpg' %}" alt="Silueta" width="256" height="256">
+                        <div class="hover-galeria">
+                            <img src="{% static 'media/logoselector.png' %}" alt="" width="100" height="100">
+                            <p>Nuestro trabajo</p>
+                        </div>
+                    </div>
+                    <div class="imagen-port">
+                        <img src="{% static 'media/pintura4.jpg' %}" alt="Soledad" width="256" height="256">
+                        <div class="hover-galeria">
+                            <img src="{% static 'media/logoselector.png' %}" alt="" width="100" height="100">
+                            <p>Nuestro trabajo</p>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </section>
+
+        <section class="clientes contenedor">
+            <h2 class="titulo">Que dicen las reseñas</h2>
+            <div class="cards">
+                <div class="card">
+                    <div class="contenido-texto-card">
+                        <h4>ítalo Passalacqua</h4>
+                        <h6>Periodista de La Cuarta</h6>
+                        <p>No hay duda alguna de que Ground Zero está marcando territorio dentro del impacto cultural
+                            que tiene el arte en Chile, no solo por facilitar la adquisición de una obra de arte si no también
+                            por estar libre de la típica pretenciosidad de los distribuidores de arte.
+                        </p>
+                    </div>
+                </div>
+             
+                <div class="card">
+                    <div class="contenido-texto-card">
+                        <h4>Eduardo Bonvallet</h4>
+                        <h6>Comentarista de televisión</h6>
+                        <p>Ground Zero está haciendo lo que muchas empresas debieron haber hecho antes,
+                            tener una sensibilidad honesta frente a los medios artísticos que tan ignorados
+                            son en Chile. No sería de extrañar que Ground Zero a futuro sea recordada como la empresa
+                            que ayudó a Chile a ser una potencia artística.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="contenedor-footer">
+            <div class="content-foo">
+                <h4>Phone</h4>
+                <p>98293294</p>
+            </div>
+            <div class="content-foo">
+                <h4>email</h4>
+                <p>yere.venegas@duocuc.cl</p>
+            </div>
+            <div class="content-foo">
+                <h4>Location</h4>
+                <p>DuocUc Sede Plaza Oeste</p>
+            </div>
+        </div>
+        <h2 class="titulo-final">&copy; Yeremias Designs</h2>
+    </footer>
+
+</body>
+
+</html>

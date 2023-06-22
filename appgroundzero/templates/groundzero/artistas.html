@@ -1,0 +1,83 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acerda de</title>
+    <link rel="shortcut icon" href="{% static 'media/logo.png' %}" type="image/x-icon">
+    <link rel="stylesheet" href="{% static 'css\styles.css' %}">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700,800&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <header>
+        <nav>
+            <a href="{% url 'home' %}">Inicio</a>
+            <a href="{% url 'acerca-de' %}">Acerca de</a>
+            <a href="{% url 'productos' %}">Productos</a>
+            <a href="{% url 'artistas' %}">Artistas</a>
+            <a href="#">Contacto</a>
+        </nav>
+    </header>
+
+    
+    <main>
+        <main>
+            <section class="contenedor sobre-nosotros">
+                <h2 class="titulo">Jean-Michael Vásquez</h2>
+                <div class="contenedor-sobre-nosotros">
+                 <img class= "imagen-about-us"src="{% static 'media/artista1.jpg' %}" alt="Sobre Nosotros" width="630" hegith="454" >
+                </div>
+                <div class="contenedor-sobre-nosotros">
+                    <P>Jean-Michael Vásquez no duda en retratar los paisajes deprimentes
+                        de la sociedad contemporánea con una virtuosidad precavida que toma mucha atención al detalle.
+                        Proveniente de un transfondo enriquecido por la subcultura alternativa de la capital, Jean-Michael
+                        plasma personajes hayados en la rutina, en escenarios realistas inspirados en el neo-expresionismo.
+                    </P>
+                </div>
+            </section>
+
+            <section class="contenedor sobre-nosotros">
+                <h2 class="titulo">Andrés Warhola</h2>
+                <div class="contenedor-sobre-nosotros">
+                 <img class= "imagen-about-us"src="{% static 'media/artista2.jpg' %}" alt="Sobre Nosotros" width="630" hegith="454" >
+                </div>
+                <div class="contenedor-sobre-nosotros">
+                    <P>Andrés Warhola es un artista convencido de que la cultura popular impregnada en superficialidad
+                    ha tenido un gran peso en la perspectiva del público general en el arte. Con su estilo excéntrico y cínico, plasma con
+                    ironía esculturas inspiradas en el arte griego clásico representando personajes populares de la cultura pop.
+                    </P>
+                </div>
+            </section>
+
+
+            <section class="contenedor sobre-nosotros">
+                <h2 class="titulo">Alfreda Kilo</h2>
+                <div class="contenedor-sobre-nosotros">
+                 <img class= "imagen-about-us"src="{% static 'media/artista3.jpg' %}" alt="Sobre Nosotros" width="630" hegith="454" >
+                </div>
+                <div class="contenedor-sobre-nosotros">
+                    <P>Alfreda Kilo está esmerada en rescatar el arte de la orfebrería precolombina. Tomando inspiración de la cultura mapuche, 
+                        busca representar las viejas costumbres y tradiciones que han sido traspasadas generacionalmente en el pasado y que en el 
+                        presente han ido cayendo poco a poco en el olvido.
+                </div>
+            </section>
+
+            
+
+
+
+
+
+
+    </main>
+
+
+
+</body>
+
+
+</html>
