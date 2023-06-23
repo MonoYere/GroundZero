@@ -1,34 +1,26 @@
-<!doctype html>
-<html lang="en">
+<form enctype="multipart/form-data" method="post">
+  {% csrf_token %}
+  {% for campo in formulario %}
 
-<head>
-  <title>Formulario</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+  <div class="mb-3">
+    <label for="" class="form-label">{{ campo.label }}</label>
+    <!--Si es un tipo de archivo se debe mostrar en el edit -->
+    {% if campo.field.widget.input_type == 'file' and campo.value %} 
+    <img src="{{MEDIA_URL}}/imagenes/{{campo.value}}" width="128" height="128">
+    {% endif %}
+    <input type="{{ campo.field.widget.input_type}}"  #
+      class="form-control" 
+      name="{{ campo.name }}"   #
+      id="" 
+      aria-describedby="helpId"
+      placeholder="{{ campo.label }}"  #Mostrar el nombre del campo
+      value="{{ campo.value | default:'' }}" #Mostrar los datos ya establecidos
+      >
+  </div>
 
-</head>
-
-<body>
-
-
-  
-
-
-
-
-
-
-
-  <!-- Bootstrap JavaScript-->
-  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
-    integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous">
-  </script>
-
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js"
-    integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz" crossorigin="anonymous">
-  </script>
-</body>
-
-</html>
+  <div class="col-12 help-text"> {{campo.errors}}</div>
+ {% endfor %}
+<br>
+ <input name="" id="" class="btn btn-success" type="submit" value="Enviar información">
+ <a name="" id="" class="btn btn-danger" href="{% url 'productos' %}" role="button">Cancelar</a>
+</form>

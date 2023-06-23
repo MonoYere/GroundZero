@@ -12,6 +12,7 @@
     integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
   <link rel="shortcut icon" href="{% static 'media/logo.png' %}" type="image/x-icon">
   <link rel="stylesheet" href="{% static 'css\styles.css' %}">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700,800&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -26,11 +27,11 @@
             </nav>
         </header>
     </header>
-
+<br>
   <main>
     <div class="card">
         <div class="card-header">
-            Listar productos
+            <a name="" id="" class="btn btn-primary" href="{% url 'agregar' %}" role="button">Agregar producto.</a>
         </div>
         <div class="card-body">
             <h4 class="card-title">Productos</h4>
@@ -44,17 +45,22 @@
                             <th scope="col">Fecha de Creacion</th>
                             <th scope="col">Categoría</th>
                             <th scope="col">Autor</th>
+                            <th scope="col">Acciones</th>
                         </tr>
                     </thead>
                     <tbody>
+                        {% for producto in productos %}
                         <tr>
-                            <td scope="row">1</td>
-                            <td>Tristeza</td>
-                            <td>Imagen</td>
-                            <td>01/02/2003</td>
-                            <td>Pintura</td>
-                            <td>Jean-Michael Vasquez</td>
+                            <td>{{producto.id_producto}}</td>
+                            <td>{{producto.nmb_producto}}</td>
+                            <td><img src="{{producto.imagen.url}}" width="128" height="128"></td>
+                            <td>{{producto.fch_creacion}}</td>
+                            <td>{{producto.id_categoria}}</td>
+                            <td>{{producto.id_autor}}</td>
+                            <td> <a name="" id="" class="btn btn-info" href="{% url 'editar' id_producto=producto.id_producto %}" role="button">Editar</a> | 
+                                <a name="" id="" class="btn btn-danger" href="{% url 'eliminar' id_producto=producto.id_producto %}" role="button">Eliminar</a> </td>
                         </tr>
+                        {% endfor %}
                     </tbody>
                 </table>
             </div>

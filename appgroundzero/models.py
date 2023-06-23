@@ -17,7 +17,7 @@ class Categoria(models.Model):
 
 
 class Producto(models.Model):
-    id_producto = models.AutoField(primary_key=True, verbose_name='Id')
+    id_producto = models.AutoField(primary_key=True)
     nmb_producto = models.CharField(max_length=120, verbose_name='Nombre')
     imagen = models.ImageField(upload_to='imagenes/',verbose_name='Imagen', null=True, blank=True)
     fch_creacion = models.DateField(blank=False, null=False, verbose_name='Fecha de creación')
@@ -26,4 +26,8 @@ class Producto(models.Model):
 
     def __str__(self):
         return str(self.nmb_producto)
+    
+    def delete(self, using=None, keep_parents=False):
+        self.imagen.storage.delete(self.imagen.name)
+        super().delete()
     
