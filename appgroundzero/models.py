@@ -17,11 +17,13 @@ class Categoria(models.Model):
 
 
 class Producto(models.Model):
-    id_producto = models.AutoField(primary_key=True)
-    nmb_producto = models.CharField(max_length=120)
-    fch_creacion = models.DateField(blank=False, null=False)
-    id_categoria = models.ForeignKey('Categoria', on_delete=models.CASCADE, db_column='idCategoria')
-    id_artista = models.ForeignKey('Artista', on_delete=models.CASCADE, db_column='idArtista')
+    id_producto = models.AutoField(primary_key=True, verbose_name='Id')
+    nmb_producto = models.CharField(max_length=120, verbose_name='Nombre')
+    imagen = models.ImageField(upload_to='imagenes/',verbose_name='Imagen', null=True, blank=True)
+    fch_creacion = models.DateField(blank=False, null=False, verbose_name='Fecha de creación')
+    id_categoria = models.ForeignKey('Categoria', on_delete=models.CASCADE, db_column='idCategoria', verbose_name='Id de la categoria')
+    id_artista = models.ForeignKey('Artista', on_delete=models.CASCADE, db_column='idArtista', verbose_name='Id del artista')
 
     def __str__(self):
         return str(self.nmb_producto)
+    
