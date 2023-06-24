@@ -21,6 +21,11 @@
             <a href="{% url 'productos' %}">Productos</a>
             <a href="{% url 'artistas' %}">Artistas</a>
             <a href="{% url 'contacto' %}">Contacto</a>
+            {% if user.is_authenticated %}
+                <a href="salir/" class="logged-in">Cerrar sesión</a>
+            {% else %}
+                <a href="ingreso/" class="logged-out">Ingresar</a>
+            {% endif %}
         </nav>
         <section class="textos-header">
             <h1>Rompe el molde, sé la vanguardia.</h1>
