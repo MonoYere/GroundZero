@@ -19,10 +19,11 @@
             <a href="{% url 'artistas' %}">Artistas</a>
             <a href="{% url 'contacto' %}">Contacto</a>
             {% if user.is_authenticated %}
-                <a href="salir/" class="logged-in">Cerrar sesión</a>
-            {% else %}
-                <a href="#" class="logged-out">Ingresar</a>
-            {% endif %}
+            <a href="salir/" class="logged-in">Cerrar sesión</a>
+        {% else %}
+            <a href="{% url 'login' %}" class="logged-out">Ingresar</a>
+        {% endif %}
+    </nav>
         </nav>
         <section class="textos-header">
             <h1>Sobre nosotros.</h1>

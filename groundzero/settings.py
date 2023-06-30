@@ -69,7 +69,7 @@ TEMPLATES = [
     },
 ]
 
-LOGIN_REDIRECT_URL = ''
+LOGIN_REDIRECT_URL = 'productos'
 
 WSGI_APPLICATION = 'groundzero.wsgi.application'
 

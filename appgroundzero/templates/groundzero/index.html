@@ -24,7 +24,7 @@
             {% if user.is_authenticated %}
                 <a href="salir/" class="logged-in">Cerrar sesión</a>
             {% else %}
-                <a href="ingreso/" class="logged-out">Ingresar</a>
+                <a href="{% url 'login' %}" class="logged-out">Ingresar</a>
             {% endif %}
         </nav>
         <section class="textos-header">

@@ -6,6 +6,7 @@ from .models import Producto
 from .models import Artista
 from .models import Categoria
 from .forms import ProductoForm
+from django.urls import reverse
 
 
 # Create your views here.
@@ -29,7 +30,14 @@ def productos(request):
     return render(request, 'gestion/productos_list.html', {'productos': productos})
 
 
-def ingresar(request):
+def menu(request):
+    request.session["usuario"]="j.vasquez"
+    usuario=request.session["usuario"]
+    context = {'usuario':usuario}
+    return render(request, 'gestion/productos_list.html', context)
+
+
+def login(request):
     login(request)
     return render(request, 'registration/login.html')
 
@@ -37,7 +45,7 @@ def ingresar(request):
 @login_required
 def salir(request):
     logout(request)
-    return redirect('/')
+    return redirect('home')
 
 @login_required
 def agregar(request):

@@ -25,10 +25,10 @@
                 <a href="{% url 'artistas' %}">Artistas</a>
                 <a href="{% url 'contacto' %}">Contacto</a>
                 {% if user.is_authenticated %}
-                    <a href="salir/" class="logged-in">Cerrar sesión</a>
-                {% else %}
-                    <a href="ingresar" class="logged-out">Ingresar</a>
-                {% endif %}
+                <a href="salir/" class="logged-in">Cerrar sesión</a>
+            {% else %}
+                <a href="{% url 'login' %}" class="logged-out">Ingresar</a>
+            {% endif %}
             </nav>
         </header>
     </header>
@@ -36,7 +36,9 @@
   <main>
     <div class="card">
         <div class="card-header">
+            {% if user.is_authenticated %}
             <a name="" id="" class="btn btn-primary" href="{% url 'agregar' %}" role="button">Agregar producto.</a>
+            {% endif %}
         </div>
         <div class="card-body">
             <h4 class="card-title">Productos</h4>
@@ -50,7 +52,9 @@
                             <th scope="col">Fecha de Creacion</th>
                             <th scope="col">Categoría</th>
                             <th scope="col">Autor</th>
+                            {% if user.is_authenticated %}
                             <th scope="col">Acciones</th>
+                            {% endif %}
                         </tr>
                     </thead>
                     <tbody>
@@ -62,8 +66,10 @@
                             <td>{{producto.fch_creacion}}</td>
                             <td>{{producto.id_categoria}}</td>
                             <td>{{producto.id_artista}}</td>
+                            {% if user.is_authenticated %}
                             <td> <a name="" id="" class="btn btn-info" href="{% url 'editar' id_producto=producto.id_producto %}" role="button">Editar</a> | 
                                 <a name="" id="" class="btn btn-danger" href="{% url 'eliminar' id_producto=producto.id_producto %}" role="button">Eliminar</a> </td>
+                                {% endif %}
                         </tr>
                         {% endfor %}
                     </tbody>

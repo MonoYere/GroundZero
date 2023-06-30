@@ -15,7 +15,7 @@ urlpatterns = [
     path('eliminar/<int:id_producto>',views.eliminar, name='eliminar'),
     path('editar/<int:id_producto>', views.editar, name='editar'),
     path('salir/', views.salir, name="salir"),
-    path('ingreso/', views.ingresar, name="ingreso"),
+    path('login', views.login, name="login"),
   
 
     ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
