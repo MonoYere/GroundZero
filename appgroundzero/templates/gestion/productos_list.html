@@ -46,7 +46,9 @@
                 <table class="table table-primary">
                     <thead>
                         <tr>
+                            {% if user.is_authenticated %}
                             <th scope="col">Id</th>
+                            {% endif %}
                             <th scope="col">Nombre</th>
                             <th scope="col">Imagen</th>
                             <th scope="col">Fecha de Creacion</th>
@@ -60,10 +62,14 @@
                     <tbody>
                         {% for producto in productos %}
                         <tr>
+                            {% if user.is_authenticated %}
                             <td>{{producto.id_producto}}</td>
+                            {% endif %}
                             <td>{{producto.nmb_producto}}</td>
+                            {% if producto.imagen %}
                             <td><img src="{{producto.imagen.url}}" width="128" height="128"></td>
-                            <td>{{producto.fch_creacion}}</td>
+                            {% endif %}
+                            <td>{{producto.fch_creacion|date:'d-m-Y'}}</td>
                             <td>{{producto.id_categoria}}</td>
                             <td>{{producto.id_artista}}</td>
                             {% if user.is_authenticated %}

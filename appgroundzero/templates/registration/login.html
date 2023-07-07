@@ -1,23 +1,41 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css\ingreso.css' %}">
     <title>Iniciar Sesión</title>
 </head>
 <body>
-    <p>Inicio de sesión requerido</p>
+    <div class="center">
+        <h1>Inicio de sesión.</h1>
     <form  method="post">
         {% csrf_token %}
-        <label for="usuario">
-            Usuario
-            <input type="text" name="username">
-        </label>
-        <label for="contraseña">
-            Contraseña
-            <input type="password" name="password">
-        </label>
-        <button type="submit">Iniciar Sesión</button>
+        <div class="txt_field">
+            <input type="text" name="username" required>
+            <label for="usuario">
+                Usuario
+            </label>
+            <span></span>
+        </div>
+
+
+
+
+        <div class="txt_field">
+            <input type="password" name="password" required>
+            <label for="contraseña">
+                Contraseña
+            </label>
+            <span></span>
+            
+        </div>
+        <button type="submit" value="Login">Iniciar Sesión</button>
+        <div><br></div>
     </form>
+    
 </body>
 </html>
+
+

@@ -10,7 +10,7 @@
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700,800&display=swap" rel="stylesheet">
 </head>
 
-<body>
+<body class="bodycontacto ">
     <header>
         <nav>
             <a href="{% url 'home' %}">Inicio</a>
@@ -24,9 +24,24 @@
                 <a href="{% url 'login' %}" class="logged-out">Ingresar</a>
             {% endif %}
         </nav>
-        </nav>
     </header>
 
+    <main>
+        <section class="contenedor sobre-nosotros">
+            <div class="contenedor-sobre-nosotros">
+                <img src="{% static 'media/constru.jpg' %}" alt="Acerca de nosotros" >
+                <div class="contenido-textos">
+                    <h1>En proceso...</h1>
+                    <p>Esta sección está en proceso, así que le rogamos su paciencia y le recomendamos que vuelva mas tarde...
+                    </p>
+                    </div>
+
+
+            </div>
+        </section>
+
+            
+    </main>
 
 </body>
 </html>

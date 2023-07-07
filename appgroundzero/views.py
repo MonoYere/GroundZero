@@ -59,10 +59,13 @@ def agregar(request):
 def editar(request, id_producto):
     producto = Producto.objects.get(id_producto=id_producto)
     formulario = ProductoForm(request.POST or None, request.FILES or None, instance=producto)
-    if formulario.is_valid() and request.method == 'POST':
+    if request.method == 'POST' and formulario.is_valid():
         formulario.save()
         return redirect('productos')
-    return render(request, 'gestion/productos_edit.html', {'formulario':formulario})
+    return render(request, 'gestion/productos_edit.html', {'formulario': formulario})
+
+
+
     
 @login_required
 def eliminar(request, id_producto):
